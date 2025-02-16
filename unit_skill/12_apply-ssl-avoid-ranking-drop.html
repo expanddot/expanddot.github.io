@@ -1,0 +1,243 @@
+<h1 class="mk-level-1">網站沒 SSL = 直接掉排名？手把手教你申請 SSL 憑證</h1><h2 class="mk-level-2"><strong>SSL 憑證申請流程：</strong></h2><p class="mk-paragraph">申請 SSL 憑證的步驟大致如下（適用於 DV、OV、EV 憑證）：</p><p class="mk-paragraph">1️⃣ <strong>選擇合適的 SSL 憑證類型</strong>（DV/OV/EV）→ 依據網站性質決定安全等級</p><p class="mk-paragraph">2️⃣ <strong>購買 SSL 憑證</strong>（選擇可信賴的憑證頒發機構，如 Sectigo、DigiCert、Certum）</p><p class="mk-paragraph">3️⃣ <strong>生成 CSR（Certificate Signing Request）</strong> → 由伺服器產生，包含網站資訊</p><p class="mk-paragraph">4️⃣ <strong>驗證身份</strong>（依據憑證類型，提供域名驗證或公司身份驗證文件）</p><p class="mk-paragraph">5️⃣ <strong>憑證核發</strong> → CA 會在驗證成功後頒發 SSL 憑證</p><p class="mk-paragraph">6️⃣ <strong>安裝 SSL 憑證</strong>（在伺服器或主機後台設定 SSL）</p><p class="mk-paragraph">7️⃣ <strong>測試 SSL 是否正常運作</strong>（可用 SSL Labs 測試）</p><hr>
+<h2 class="mk-level-2"><strong>SSL 憑證申請的</strong>準備條件：</h2><p class="mk-paragraph">申請 SSL 憑證時，所需的資料會根據 <strong>憑證類型（DV、OV、EV）</strong> 而有所不同。以下是不同類型 SSL 憑證的申請準備條件：</p><h3 class="mk-level-3"><strong>1. DV（Domain Validation，域名驗證）</strong> 🔹 <strong>最簡單，最快速（幾分鐘內核發）</strong></h3><hr>
+<p class="mk-paragraph">✅ <strong>適合對象</strong>：個人網站、部落格、小型企業</p><p class="mk-paragraph">✅ <strong>驗證方式</strong>：只需要證明你擁有該網域</p><h3 class="mk-level-3"><strong>準備材料</strong></h3><p class="mk-paragraph"><strong>1. 網域名稱（Domain Name）</strong></p><ul class="mk-unordered-list"><li>你必須擁有申請 SSL 憑證的網域，例如 <code>example.com</code></li>
+</ul><p class="mk-paragraph"><strong>2. 驗證方式（選擇一種）</strong></p><ul class="mk-unordered-list"><li><strong>Email 驗證</strong> → 需要使用 <a href="mailto:`admin@example.com" target="_blank" class="mk-link" title="">`admin@example.com</a><code>、</code><a href="mailto:webmaster@example.com" target="_blank" class="mk-link" title="">webmaster@example.com</a>` 等官方郵箱接收驗證信</li>
+<li><strong>DNS 記錄驗證</strong> → 在 DNS 記錄中添加一條特定 TXT 記錄</li>
+<li><strong>HTTP 文件驗證</strong> → 在網站根目錄放置特定驗證檔案（CA 會提供檔案內容）</li>
+</ul><p class="mk-paragraph"><strong>3. CSR 檔案（Certificate Signing Request，部分機構需要）</strong></p><ul class="mk-unordered-list"><li>由伺服器生成，包含網站名稱、組織名稱等</li>
+</ul><hr>
+<h3 class="mk-level-3"><strong>2. OV（Organization Validation，組織驗證）</strong> 🔹 <strong>需要公司資料，通常 1-3 天核發</strong></h3><p class="mk-paragraph">✅ <strong>適合對象</strong>：企業、電子商務網站、政府機構</p><p class="mk-paragraph">✅ <strong>驗證方式</strong>：需要提供企業身份證明</p><h3 class="mk-level-3"><strong>準備材料</strong></h3><p class="mk-paragraph"><strong>1. 網域名稱（Domain Name）</strong></p><ul class="mk-unordered-list"><li>與 DV 憑證相同</li>
+</ul><p class="mk-paragraph"><strong>2. 公司/組織的官方資訊</strong></p><ul class="mk-unordered-list"><li><strong>企業名稱</strong>（必須與政府註冊資訊一致）</li>
+<li><strong>企業登記地址</strong>（符合當地政府商業登記的地址）</li>
+<li><strong>聯絡電話</strong>（需要與公共資料匹配，例如黃頁或政府網站）</li>
+<li><strong>企業註冊號碼或文件</strong>（例如工商營業執照、登記證明）</li>
+</ul><p class="mk-paragraph"><strong>3. 驗證方式</strong></p><ul class="mk-unordered-list"><li><strong>企業資料比對</strong> → 憑證機構（CA）會檢查公司是否在官方商業登記庫（如 Dunn &amp; Bradstreet, 政府機構網站）中</li>
+<li><strong>電話驗證</strong> → CA 會打電話給公司登記的官方號碼，確認負責人是否批准申請</li>
+<li><strong>Email/DNS/HTTP 驗證</strong> → 與 DV 憑證相同</li>
+</ul><p class="mk-paragraph"><strong>4. CSR 檔案</strong>（必須提供）</p><ul class="mk-unordered-list"><li>由伺服器生成</li>
+</ul><hr>
+<h3 class="mk-level-3"><strong>3. EV（Extended Validation，擴展驗證）</strong> 🔹 <strong>最高等級驗證，通常 3-7 天核發</strong></h3><p class="mk-paragraph">✅ <strong>適合對象</strong>：大型企業、銀行、政府機構、金融科技公司</p><p class="mk-paragraph">✅ <strong>驗證方式</strong>：必須進行嚴格的公司身份驗證</p><h3 class="mk-level-3"><strong>準備材料</strong></h3><p class="mk-paragraph"><strong>1. 網域名稱（Domain Name）</strong></p><ul class="mk-unordered-list"><li>與 DV/OV 憑證相同</li>
+</ul><p class="mk-paragraph"><strong>2. 公司/組織的官方資訊（與 OV 相同，但需要更完整）</strong></p><ul class="mk-unordered-list"><li><strong>企業法定名稱</strong>（與政府註冊一致）</li>
+<li><strong>企業登記地址</strong></li>
+<li><strong>聯絡電話</strong>（需在公開的商業登記資料中可查）</li>
+<li><strong>企業註冊文件</strong>（例如營業執照、公司註冊證書）</li>
+<li><strong>政府機構提供的企業身份證明文件</strong></li>
+</ul><p class="mk-paragraph"><strong>3. 高層管理人員驗證</strong></p><ul class="mk-unordered-list"><li>申請人需要是 <strong>企業的法定代表人或高層管理人員</strong>（例如 CEO、IT 負責人）</li>
+<li>CA 可能要求提供 <strong>公司授權書</strong>，以確認該人員可以申請 EV SSL</li>
+<li><strong>電話回訪驗證</strong>：CA 會打電話給企業代表，確認申請細節</li>
+</ul><p class="mk-paragraph"><strong>4. CSR 檔案</strong>（必須提供）</p><p class="mk-paragraph"><strong>5. 額外的身份驗證</strong></p><ul class="mk-unordered-list"><li>CA 可能會要求 <strong>律師或會計師簽署身份證明文件</strong></li>
+<li>部分 CA 會使用 <strong>銀行對賬單或公用事業帳單</strong> 來驗證企業地址</li>
+</ul><hr>
+<h2 class="mk-level-2"><strong>申請不同 SSL 憑證所需時間</strong></h2><table class="mk-table">
+<thead><tr>
+<th>SSL 類型</th>
+<th>申請所需資料</th>
+<th>申請時間</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>DV SSL</strong></td>
+<td>只需驗證域名（Email/DNS/HTTP）</td>
+<td>幾分鐘至數小時</td>
+</tr>
+<tr>
+<td><strong>OV SSL</strong></td>
+<td>企業登記資訊 + 網域驗證</td>
+<td>1-3 天</td>
+</tr>
+<tr>
+<td><strong>EV SSL</strong></td>
+<td>企業完整驗證 + 高層管理人員確認</td>
+<td>3-7 天</td>
+</tr>
+</tbody>
+</table><h3 class="mk-level-3"><strong>還沒申請 SSL？現在就是最佳時機！</strong></h3><p class="mk-paragraph">無論你的網站是個人部落格、小型企業，還是大型品牌，<strong>SSL 憑證不僅是保護數據安全的關鍵，更是提升網站信任度、SEO 排名的重要因素</strong>。選擇適合的 SSL 類型，確保網站資訊加密，讓訪客在你的網站上感到安心。</p><p class="mk-paragraph">選擇適合的 SSL 憑證，讓你的網站從「不安全」變成「值得信賴」，提升品牌形象與客戶信任度！如果你對申請流程有任何疑問，歡迎找我們討論，確保你的網站達到最高安全標準！</p><p class="mk-paragraph">快<strong>擊右下角加入我們的 LINE 官方帳號</strong>，等你來聊！</p><!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 , minimum-scale=1, maximum-scale=1"
+    />
+    <title>-擴展技術力|聊網站技術-擴點設計</title>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="../lib/animate.css" />
+    <link rel="stylesheet" href="../lib/AwesomeV6.min.css" />
+    <link rel="stylesheet" href="../lib/magnific-popup.css" />
+    <link rel="stylesheet" type="text/css" href="../style/main.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org,
+        "name": "擴點設計",
+        "url": "https://expanddot.com,
+        "@type": "Article|WebSite",
+        "headline": "網站沒 SSL = 直接掉排名？手把手教你申請 SSL 憑證",
+        "author": {
+          "@type": "Organization",
+          "name": "擴點設計"
+        },
+        "dateModified": "2025-02-15",
+        "datePublished": "2025-02-15",
+        "image": "https://expanddot.com/images/logo_b.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "擴點設計",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://expanddot.com/images/logo_b.png"
+          }
+        },
+        "description": "無論你的網站是個人部落格、小型企業，還是大型品牌，SSL 憑證不僅是保護數據安全的關鍵，更是提升網站信任度、SEO 排名的重要因素。選擇適合的 SSL 類型，確保網站資訊加密，讓訪客在你的網站上感到安心。",
+        "mainEntityOfPage": "https://expanddot.com
+      }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-5VLPBTDH",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script>
+    <!-- End Google Tag Manager -->
+  </head>
+
+  <body class="detail">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VLPBTDH"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <main id="appMain">
+      <div :class="modeIsLight?'isLightBg':'isBlockBg'">
+        <header class="header">
+          <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+            <div class="container">
+              <a class="navbar-brand" href="/">
+                <img v-if="modeIsLight" src="../images/logo_b.png" alt="" />
+                <img v-else src="../images/logo_w.png" alt="" />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="/unit_ui/list.html"
+                      ><span class="unit_name">擴響視感力</span
+                      ><span class="unit_des">聊UI設計</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit_ux/list.html"
+                      ><span class="unit_name">擴進體驗力</span
+                      ><span class="unit_des">聊用戶體驗</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit_skill/list.html"
+                      ><span class="unit_name">擴展技術力</span
+                      ><span class="unit_des">聊網站技術</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      aria-current="page"
+                      href="/unit_marketing/list.html"
+                      ><span class="unit_name">擴升思維力</span
+                      ><span class="unit_des">聊網路行銷</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit_think/list.html"
+                      ><span class="unit_name">擴寬商視力</span
+                      ><span class="unit_des">聊商業模式</span></a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/unit_case/list.html"
+                      ><span class="unit_name">擴銷實務力</span
+                      ><span class="unit_des">聊成功案例</span></a
+                    >
+                  </li>
+                </ul>
+                <a href="#" class="btnMode text-center" @click.prevent="handleMode">
+                  <div v-if="modeIsLight">
+                    <i class="fa-solid fa-sun"></i>
+                  </div>
+                  <div v-else>
+                    <i class="fa-solid fa-moon"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+<main class="container">
+  <aside id="aside">
+
+  </aside>
+  <div id="article">
+   <div class="smo_box">
+        <a href="#" class="button-share-fb" target="_blank"
+        onclick="shareTo('facebook')">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="button-share-line" target="_blank"
+            onclick="shareTo('line')">
+            <i class="fa-brands fa-line"></i>
+        </a>
+        <a href="#" class="button-share-linkedin" target="_blank"
+            onclick="shareTo('linkedin')">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
+
+  </div>
+</main>
+
+    <footer class="footer py-3">
+        <div class="container">
+          <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/channel/UCiY7xcUfQZWKd1mJtbxG7fA" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:expanddotcom@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+          </li>
+          </ul>
+          <div class="copyright">
+            <p class="text-center mb-0">Copyright © 2025 </p>
+          </div>
+        </div>
+      </footer>
+      <div id="line-it-button">
+        <div  class="line-it-button" data-lang="zh_Hant" data-type="friend" data-env="REAL"   data-lineId="@203oehfp" style="display: none;"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../lib/bootstrap.bundle.min.js"></script>
+  <script src="../lib/swiper-bundle.min.js"></script>
+  <script src='../lib/wow.js'></script>
+  <script src="../lib/AwesomeV6.min.js" ></script>
+  <!-- <script src="../lib/jquery-3.7.1.js" ></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../lib/jquery.magnific-popup.js" ></script>
+  <script src='../lib/vue.global.js'></script>
+  <script src="../script/vendor.js"></script>
+  <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+
+</body>
+
+</html>

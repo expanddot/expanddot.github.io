@@ -1,4 +1,4 @@
-<h1 class="mk-level-1">我的 Markdown 文件</h1><p class="mk-paragraph">這是文件的內容部分。</p><!DOCTYPE html>
+<h1 class="mk-level-1">我的 Markdown 文件</h1><p class="mk-paragraph">這是文件的內容部分。</p><p class="mk-paragraph">快<strong>擊右下角加入我們的 LINE 官方帳號</strong>，等你來聊！</p><!DOCTYPE html>
 <html lang="zh-TW">
   <head>
     <meta charset="UTF-8" />
@@ -12,10 +12,45 @@
     <link rel="stylesheet" href="../lib/bootstrap.min.css" />
     <link rel="stylesheet" href="../lib/animate.css" />
     <link rel="stylesheet" href="../lib/AwesomeV6.min.css" />
+    <link rel="stylesheet" href="../lib/magnific-popup.css" />
     <link rel="stylesheet" type="text/css" href="../style/main.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org,
+        "name": "擴點設計",
+        "url": "https://expanddot.com,
+        "@type": "Article|WebSite",
+        "headline": "標題",
+        "author": {
+          "@type": "Organization",
+          "name": "擴點設計"
+        },
+        "dateModified": "2025-02-15",
+        "datePublished": "2025-02-15",
+        "image": "https://expanddot.com/images/logo_b.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "擴點設計",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://expanddot.com/images/logo_b.png"
+          }
+        },
+        "description": "描述",
+        "mainEntityOfPage": "https://expanddot.com
+      }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-5VLPBTDH",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script>
+    <!-- End Google Tag Manager -->
   </head>
 
   <body class="detail">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VLPBTDH"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main id="appMain">
       <div :class="modeIsLight?'isLightBg':'isBlockBg'">
         <header class="header">
@@ -94,7 +129,28 @@
           </nav>
         </header>
 
+<main class="container">
+  <aside id="aside">
 
+  </aside>
+  <div id="article">
+   <div class="smo_box">
+        <a href="#" class="button-share-fb" target="_blank"
+        onclick="shareTo('facebook')">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="button-share-line" target="_blank"
+            onclick="shareTo('line')">
+            <i class="fa-brands fa-line"></i>
+        </a>
+        <a href="#" class="button-share-linkedin" target="_blank"
+            onclick="shareTo('linkedin')">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+    </div>
+
+  </div>
+</main>
 
     <footer class="footer py-3">
         <div class="container">
@@ -111,15 +167,24 @@
           </div>
         </div>
       </footer>
+      <div id="line-it-button">
+        <div  class="line-it-button" data-lang="zh_Hant" data-type="friend" data-env="REAL"   data-lineId="@203oehfp" style="display: none;"></div>
+      </div>
     </div>
   </main>
 
   <script src="../lib/bootstrap.bundle.min.js"></script>
   <script src="../lib/swiper-bundle.min.js"></script>
   <script src='../lib/wow.js'></script>
-  <script r src="../lib/AwesomeV6.min.js" ></script>
+  <script src="../lib/AwesomeV6.min.js" ></script>
+  <!-- <script src="../lib/jquery-3.7.1.js" ></script> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../lib/jquery.magnific-popup.js" ></script>
   <script src='../lib/vue.global.js'></script>
   <script src="../script/vendor.js"></script>
+  <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+
+
 </body>
 
 </html>

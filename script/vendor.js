@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("#app not found");
   }
+  
 });
 
 
@@ -40,7 +41,7 @@ mkElements.forEach(function(element) {
 });
 
 
-var mklevelElements = document.querySelectorAll('[class^="mk-level"]');
+var mklevelElements = document.querySelectorAll('[class^="mk-level-2"]');
 var asideElement = document.querySelector('#aside ');
 mklevelElements.forEach(function(element, index) {
  // 创建一个 <a> 元素
@@ -63,6 +64,64 @@ mklevelElements.forEach(function(element, index) {
 
  element.id=`h${index + 1}` 
 });
+
+
+$(document).ready(function() {
+  $('img.mk-image').each(function() {
+    var imgSrc = $(this).attr('src'); // 取得img的src屬性
+    var imgAlt = $(this).attr('alt'); // 取得img的alt屬性
+
+    // 創建a元素並設置href為img的src
+    var link = $('<a>', {
+      'class': 'image-link',
+      'href': imgSrc,
+      'title': imgAlt
+    });
+
+    // 將img元素包裝進a元素中
+    $(this).wrap(link);
+  });
+  $('.image-link').magnificPopup({
+    type:'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+        verticalFit: true
+    },
+    gallery: {
+      enabled: true, // 啟用圖片庫功能
+      navigateByImgClick: true, // 允許點擊圖片進行切換
+      preload: [0, 1] // 預載入前後的圖片
+    }
+  });
+});
+
+
+
+function shareTo(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent(document.title);
+
+  let shareUrl = '';
+
+  switch (platform) {
+      case 'facebook':
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+          break;
+      case 'line':
+          shareUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
+          break;
+    
+      case 'linkedin':
+          shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+     
+  }
+
+  if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+  }
+}
 
 // // 動畫載入
 // if (window.screen.availWidth > 991) {
