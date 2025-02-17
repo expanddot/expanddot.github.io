@@ -441,6 +441,25 @@ body {
 .detail .mk-unordered-list {
   word-break: break-all; }
 
+.detail table.mk-table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.detail table.mk-table {
+  border: 1px solid #ddd; }
+  .detail table.mk-table th,
+  .detail table.mk-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left; }
+  .detail table.mk-table th {
+    background-color: #f4f4f4;
+    font-weight: bold; }
+    .detail table.mk-table th:nth-child(even) {
+      background-color: #f9f9f9; }
+    .detail table.mk-table th:hover {
+      background-color: #f1f1f1; }
+
 html {
   scroll-behavior: smooth;
   font-family: "Noto Sans TC","Noto Serif TC", serif; }
