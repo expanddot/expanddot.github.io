@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
 // 获取所有 class 名称以 'mk' 开头的元素
 var mkElements = document.querySelectorAll('[class^="mk"]');
 
@@ -97,7 +100,7 @@ $(document).ready(function() {
 });
 
 
-
+// SMO 設置
 function shareTo(platform) {
   const url = encodeURIComponent(window.location.href);
   const text = encodeURIComponent(document.title);
@@ -122,6 +125,37 @@ function shareTo(platform) {
       window.open(shareUrl, '_blank', 'noopener,noreferrer');
   }
 }
+
+const loaderBox = {
+  className: "loader-box",
+  init: function () {
+    const loaderBox = document.createElement("div");
+    loaderBox.className = this.className;
+    loaderBox.style.display = "none";
+    loaderBox.innerHTML = `
+          <div class="loader-stage">
+              <div class="dot-carousel"></div>
+          </div>
+          <span class="loader-box__txt">LOADING</span>
+      `;
+
+    document.body.appendChild(loaderBox);
+  },
+  open: function () {
+    document.querySelector("." + this.className).style.display = "block";
+  },
+  close: function () {
+    document.querySelector("." + this.className).style.display = "none";
+  },
+};
+
+loaderBox.init();
+
+loaderBox.open();
+
+setTimeout(() => {
+  loaderBox.close();
+}, 800);
 
 // // 動畫載入
 // if (window.screen.availWidth > 991) {

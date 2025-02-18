@@ -212,6 +212,80 @@ body {
   background-color: #10a1ef;
   color: #fff; }
 
+.loader-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1035; }
+  .loader-box__txt {
+    display: block;
+    color: var(--color-grey_4);
+    z-index: 55;
+    font-weight: normal;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
+.loader-stage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  padding: 1rem 0;
+  width: 100px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px; }
+
+.dot-carousel {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--color-grey_4);
+  color: var(--color-grey_4);
+  -webkit-box-shadow: 9984px 0 0 0 var(--color-grey_4), 9999px 0 0 0 var(--color-grey_4), 10014px 0 0 0 var(--color-grey_4);
+          box-shadow: 9984px 0 0 0 var(--color-grey_4), 9999px 0 0 0 var(--color-grey_4), 10014px 0 0 0 var(--color-grey_4);
+  -webkit-animation: dotCarousel 1.5s infinite linear;
+          animation: dotCarousel 1.5s infinite linear; }
+
+@-webkit-keyframes dotCarousel {
+  0% {
+    -webkit-box-shadow: 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4);
+            box-shadow: 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4); }
+  50% {
+    -webkit-box-shadow: 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4);
+            box-shadow: 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4); }
+  100% {
+    -webkit-box-shadow: 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4);
+            box-shadow: 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4); } }
+
+@keyframes dotCarousel {
+  0% {
+    -webkit-box-shadow: 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4);
+            box-shadow: 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4); }
+  50% {
+    -webkit-box-shadow: 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4);
+            box-shadow: 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4), 9999px 0 0 1px var(--color-grey_4); }
+  100% {
+    -webkit-box-shadow: 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4);
+            box-shadow: 9999px 0 0 1px var(--color-grey_4), 10014px 0 0 -1px var(--color-grey_4), 9984px 0 0 -1px var(--color-grey_4); } }
+
 .list {
   display: -webkit-box;
   display: -ms-flexbox;
